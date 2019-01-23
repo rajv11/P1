@@ -6,7 +6,11 @@ namespace P1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Welcome to restraunt! \nPlease provide your name: ");
+            var name = Console.ReadLine();
+
+            
+
         }
     }
 }
