@@ -76,8 +76,8 @@ namespace P1
                 Console.Write("\nThank you for your order.  Visit Again \n");
                
                 Console.WriteLine("Do you want to order again: ");
-                var choice = Console.Read();
-                if (choice == 'n')
+                var choice = Console.ReadLine();
+                if (choice == "n")
                 {
                     break;
                 }
