@@ -11,27 +11,31 @@ namespace P1
             Console.WriteLine($"Welcome to restraunt {name} !!");
             while(true)
             {
-                //Console.WriteLine("Select the option from below menu: ");
                 Console.WriteLine("         BURGERS");
                 Console.WriteLine("1.Spicy Chiken Burger - $6.76\n2.Chicken Burger - $5.25" +
                     "\n3.Vegan - $4.99\n4.Cheese Burger - $5.15\n");
 
-                //Console.WriteLine("         Drinks ($6.25 per Drink)");
-                //Console.WriteLine("1.Coke\n2.Pepsi\n3.Dr.Pepper\n4.Lemonade\n5.Mineral Water");
                 char burgerOption;
+                int quantity = 0;
+                decimal totalCost = 0.0m;
+                bool option;
+
+                
                 while (true)
                 {
                     Console.Write("Select Type of Burger: ");
-                    burgerOption = Convert.ToChar(Console.Read());
-                    bool option = IsValid(burgerOption);
+                    burgerOption = Convert.ToChar(Console.ReadLine());
+                    option = IsValid(burgerOption);
                     if (option)
                     {
                         break;
+                    } else
+                    {
+                        Console.WriteLine("Entr a valid option. Try Again!!");
                     }
                 }
                 
                 
-                int quantity = 0;
                 while (true)
                 {
                     Console.Write("Select quantity: ");
@@ -45,33 +49,35 @@ namespace P1
                         Console.WriteLine("Enter valid quantity i.e., 1 or more\n");
                     }
                 }
-                //decimal totalCost = 0.0m;
                 Console.WriteLine($"\n{name}'s Bill: ");
                 switch (burgerOption)
                 {
                     case '1' :
-                        Console.WriteLine($"{quantity} X Spicy Chiken Burger = {TotalCost(6.76m,quantity)}");
+                        totalCost = TotalCost(6.76m, quantity);
+                        Console.WriteLine($"{quantity} X Spicy Chiken Burger = ${totalCost}");
                         break;
                     case '2':
-                        Console.WriteLine($"{quantity} X Chicken Burger = {TotalCost(5.25m, quantity)}");
+                        totalCost = TotalCost(5.25m, quantity);
+                        Console.WriteLine($"{quantity} X Chicken Burger = ${totalCost}");
                         break;
                     case '3':
-                        Console.WriteLine($"{quantity} X Vegan = {TotalCost(4.99m, quantity)}");
+                        totalCost = TotalCost(4.99m, quantity);
+                        Console.WriteLine($"{quantity} X Vegan = ${totalCost}");
                         break;
                     case '4':
-                        Console.WriteLine($"{quantity} X Cheese Burger = {TotalCost(5.15m, quantity)}");
+                        totalCost = TotalCost(5.15m, quantity);
+                        Console.WriteLine($"{quantity} X Cheese Burger = ${totalCost}");
                         break;
                     default:
                         Console.WriteLine("Select valid option");
                         break;
                 }
 
-                Console.Write("\nThank you for your order.  Visit Again ");
-                //var drinkOption = Console.ReadLine();
-
+                Console.Write("\nThank you for your order.  Visit Again \n");
+               
                 Console.WriteLine("Do you want to order again: ");
-                var choice = Console.ReadLine();
-                if (choice == "n")
+                var choice = Console.Read();
+                if (choice == 'n')
                 {
                     break;
                 }
