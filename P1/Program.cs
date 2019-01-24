@@ -17,11 +17,25 @@ namespace P1
                     "\n3.Vegan - $4.99\n4.Cheese Burger - $5.15");
 
                 Console.WriteLine("         Drinks ($6.25 per Drink)");
-                Console.WriteLine("1.Coke\n2.Pepsi\n3.Dr.Pepper\n4.Lemonade\n5.Mineral Water");
-                Console.Write(" Select Type of Burger: ");
+                //Console.WriteLine("1.Coke\n2.Pepsi\n3.Dr.Pepper\n4.Lemonade\n5.Mineral Water");
+                Console.Write("Select Type of Burger: ");
                 var burgerOption = Console.ReadLine();
-                Console.Write(" Select Type of Burger: ");
-                var drinkOption = Console.ReadLine();
+                while(true)
+                {
+                    Console.Write("Select quantity: ");
+                    var quantity = Console.ReadLine();
+
+                    if(Convert.ToInt32(quantity) > 0 )
+                    {
+                        break;
+                    } else
+                    {
+                        Console.WriteLine("Enter valid quantity i.e., 1 or more");
+                    }
+                }
+               
+                //Console.Write("Select Type of Drink: ");
+                //var drinkOption = Console.ReadLine();
 
                 Console.WriteLine("Do you want to order again: ");
                 var choice = Console.ReadLine();
