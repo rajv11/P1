@@ -18,8 +18,18 @@ namespace P1
 
                 //Console.WriteLine("         Drinks ($6.25 per Drink)");
                 //Console.WriteLine("1.Coke\n2.Pepsi\n3.Dr.Pepper\n4.Lemonade\n5.Mineral Water");
-                Console.Write("Select Type of Burger: ");
-                var burgerOption = Convert.ToChar(Console.ReadLine());
+                char burgerOption;
+                while (true)
+                {
+                    Console.Write("Select Type of Burger: ");
+                    burgerOption = Convert.ToChar(Console.Read());
+                    bool option = IsValid(burgerOption);
+                    if (option)
+                    {
+                        break;
+                    }
+                }
+                
                 
                 int quantity = 0;
                 while (true)
@@ -68,6 +78,10 @@ namespace P1
             }
 
 
+        }
+        private static bool IsValid(char option)
+        {
+            return option == '1' || option == '2' || option == '3' || option == '4';
         }
         private static decimal TotalCost(decimal cost, int number)
         {
