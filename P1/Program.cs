@@ -14,9 +14,9 @@ namespace P1
                 //Console.WriteLine("Select the option from below menu: ");
                 Console.WriteLine("         BURGERS");
                 Console.WriteLine("1.Spicy Chiken Burger - $6.76\n2.Chicken Burger - $5.25" +
-                    "\n3.Vegan - $4.99\n4.Cheese Burger - $5.15");
+                    "\n3.Vegan - $4.99\n4.Cheese Burger - $5.15\n");
 
-                Console.WriteLine("         Drinks ($6.25 per Drink)");
+                //Console.WriteLine("         Drinks ($6.25 per Drink)");
                 //Console.WriteLine("1.Coke\n2.Pepsi\n3.Dr.Pepper\n4.Lemonade\n5.Mineral Water");
                 Console.Write("Select Type of Burger: ");
                 var burgerOption = Console.ReadLine();
@@ -31,7 +31,7 @@ namespace P1
                         break;
                     } else
                     {
-                        Console.WriteLine("Enter valid quantity i.e., 1 or more");
+                        Console.WriteLine("Enter valid quantity i.e., 1 or more\n");
                     }
                 }
                 //decimal totalCost = 0.0m;
@@ -41,9 +41,21 @@ namespace P1
                     case "1" :
                         Console.WriteLine($"{quantity} X Spicy Chiken Burger = {TotalCost(6.76m,quantity)}");
                         break;
-                        
-                 }
-                //Console.Write("Select Type of Drink: ");
+                    case "2":
+                        Console.WriteLine($"{quantity} X Chicken Burger = {TotalCost(5.25m, quantity)}");
+                        break;
+                    case "3":
+                        Console.WriteLine($"{quantity} X Vegan = {TotalCost(4.99m, quantity)}");
+                        break;
+                    case "4":
+                        Console.WriteLine($"{quantity} X Cheese Burger = {TotalCost(5.15m, quantity)}");
+                        break;
+                    default:
+                        Console.WriteLine("Select valid option");
+                        break;
+                }
+
+                Console.Write("\nThank you for your order.  Visit Again ");
                 //var drinkOption = Console.ReadLine();
 
                 Console.WriteLine("Do you want to order again: ");
