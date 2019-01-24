@@ -7,7 +7,7 @@ namespace P1
         static void Main(string[] args)
         {
             Console.WriteLine("Please provide your name: ");
-            string name = readName();
+            string name = ReadName();
             Console.WriteLine($"Welcome to restraunt {name} !!");
             while(true)
             {
@@ -39,7 +39,7 @@ namespace P1
                 switch (burgerOption)
                 {
                     case "1" :
-                        Console.WriteLine($"{quantity} X Spicy Chiken Burger = {totalCost(6.76m,quantity)}");
+                        Console.WriteLine($"{quantity} X Spicy Chiken Burger = {TotalCost(6.76m,quantity)}");
                         break;
                         
                  }
@@ -56,11 +56,11 @@ namespace P1
 
 
         }
-        private static decimal totalCost(decimal cost, int number)
+        private static decimal TotalCost(decimal cost, int number)
         {
             return cost * number;
         }
-        private static string readName()
+        private static string ReadName()
         {
             return Console.ReadLine();
         }
