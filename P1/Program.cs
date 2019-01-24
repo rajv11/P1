@@ -20,12 +20,13 @@ namespace P1
                 //Console.WriteLine("1.Coke\n2.Pepsi\n3.Dr.Pepper\n4.Lemonade\n5.Mineral Water");
                 Console.Write("Select Type of Burger: ");
                 var burgerOption = Console.ReadLine();
-                while(true)
+                int quantity = 0;
+                while (true)
                 {
                     Console.Write("Select quantity: ");
-                    var quantity = Console.ReadLine();
+                    quantity = Convert.ToInt32(Console.ReadLine());
 
-                    if(Convert.ToInt32(quantity) > 0 )
+                    if(quantity > 0 )
                     {
                         break;
                     } else
@@ -33,7 +34,15 @@ namespace P1
                         Console.WriteLine("Enter valid quantity i.e., 1 or more");
                     }
                 }
-               
+                //decimal totalCost = 0.0m;
+                
+                switch (burgerOption)
+                {
+                    case "1" :
+                        Console.WriteLine($"{quantity} X Spicy Chiken Burger = {totalCost(6.76m,quantity)}");
+                        break;
+                        
+                 }
                 //Console.Write("Select Type of Drink: ");
                 //var drinkOption = Console.ReadLine();
 
@@ -47,7 +56,10 @@ namespace P1
 
 
         }
-
+        private static decimal totalCost(decimal cost, int number)
+        {
+            return cost * number;
+        }
         private static string readName()
         {
             return Console.ReadLine();
