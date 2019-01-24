@@ -19,7 +19,8 @@ namespace P1
                 //Console.WriteLine("         Drinks ($6.25 per Drink)");
                 //Console.WriteLine("1.Coke\n2.Pepsi\n3.Dr.Pepper\n4.Lemonade\n5.Mineral Water");
                 Console.Write("Select Type of Burger: ");
-                var burgerOption = Console.ReadLine();
+                var burgerOption = Convert.ToChar(Console.ReadLine());
+                
                 int quantity = 0;
                 while (true)
                 {
@@ -35,19 +36,19 @@ namespace P1
                     }
                 }
                 //decimal totalCost = 0.0m;
-                
+                Console.WriteLine($"\n{name}'s Bill: ");
                 switch (burgerOption)
                 {
-                    case "1" :
+                    case '1' :
                         Console.WriteLine($"{quantity} X Spicy Chiken Burger = {TotalCost(6.76m,quantity)}");
                         break;
-                    case "2":
+                    case '2':
                         Console.WriteLine($"{quantity} X Chicken Burger = {TotalCost(5.25m, quantity)}");
                         break;
-                    case "3":
+                    case '3':
                         Console.WriteLine($"{quantity} X Vegan = {TotalCost(4.99m, quantity)}");
                         break;
-                    case "4":
+                    case '4':
                         Console.WriteLine($"{quantity} X Cheese Burger = {TotalCost(5.15m, quantity)}");
                         break;
                     default:
