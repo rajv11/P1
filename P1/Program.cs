@@ -8,7 +8,7 @@ namespace P1
         {
             Console.WriteLine("Please provide your name: ");
             string name = ReadName();
-            Console.WriteLine($"Welcome to restraunt {name} !!");
+            Console.WriteLine($"Welcome to restaurant {name} !!");
             while(true)
             {
                 Console.WriteLine("         BURGERS");
